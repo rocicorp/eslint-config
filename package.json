@@ -15,8 +15,7 @@
   "files": [
     "index",
     "LICENSE",
-    "README.md",
-    ".browserslistrc"
+    "README.md"
   ],
   "main": "index.js",
   "dependencies": {
