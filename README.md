@@ -13,7 +13,7 @@ $ npm install @rocicorp/eslint-config --save-dev
 
 
 ## Usage
-** Make sure you have a tsconfig.json in your project **
+** Make sure you have a `tsconfig.json` and `.eslintignore`  in your project **
 
 Add this to the `package.json`:
 
