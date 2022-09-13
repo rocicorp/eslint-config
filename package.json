@@ -1,0 +1,30 @@
+{
+  "name": "@rocicorp/eslint-config",
+  "description": "Common eslint config for Rocicorp",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/rocicorp/eslint-config.git"
+  },
+  "scripts": {
+    "lint": "eslint . --config index.js",
+    "prettier:check": "prettier --check '**/*.{js, md}'",
+    "prettier:write": "prettier --write '**/*.{js, md}'"
+  },
+  "license": "Apache 2.0",
+  "files": [
+    "index",
+    "LICENSE",
+    "README.md",
+    ".browserslistrc"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^8.7.0",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
