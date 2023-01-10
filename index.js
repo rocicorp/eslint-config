@@ -47,6 +47,8 @@ module.exports = {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "no-else-return": "error",
-    "require-await": "error",
+    "require-await": "error",    
+    "no-return-await": "error",
+    "arrow-body-style": "error",
   },
 };
