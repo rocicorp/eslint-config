@@ -40,6 +40,13 @@ module.exports = {
         trailingUnderscore: 'forbid',
       },
       {
+        // To allow React function components
+        selector: 'function',
+        format: ['camelCase', 'PascalCase'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
         selector: 'typeLike',
         format: ['PascalCase'],
       },
