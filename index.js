@@ -86,6 +86,12 @@ module.exports = {
         destructuredArrayIgnorePattern: '^_',
       },
     ],
+    '@typescript-eslint/explicit-member-accessibility': [
+      'error',
+      {
+        accessibility: 'no-public',
+      },
+    ],
     'no-else-return': 'error',
     'require-await': 'error',
     'no-return-await': 'error',
