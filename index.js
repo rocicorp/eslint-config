@@ -92,6 +92,14 @@ module.exports = {
         accessibility: 'no-public',
       },
     ],
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector:
+          ':matches(PropertyDefinition, MethodDefinition)[accessibility="private"]',
+        message: 'Use #private instead',
+      },
+    ],
     'no-else-return': 'error',
     'require-await': 'error',
     'no-return-await': 'error',
