@@ -7,6 +7,7 @@ module.exports = {
     project: './**/tsconfig.json',
   },
   rules: {
+    'no-console': 'error',
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/naming-convention': [
       'error',
