@@ -1,7 +1,7 @@
 {
   "name": "@rocicorp/eslint-config",
   "description": "Common eslint config for Rocicorp",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/rocicorp/eslint-config.git"
