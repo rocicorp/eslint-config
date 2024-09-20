@@ -105,5 +105,6 @@ module.exports = {
     'require-await': 'error',
     'no-return-await': 'error',
     'arrow-body-style': 'error',
+    '@typescript-eslint/parameter-properties': 'error',
   },
 };
