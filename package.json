@@ -1,13 +1,14 @@
 {
   "name": "@rocicorp/eslint-config",
   "description": "Common eslint config for Rocicorp",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/rocicorp/eslint-config.git"
   },
   "scripts": {
-    "lint": "eslint . --config index.js",
+    "lint": "eslint test-file.ts --config index.js",
+    "lint:test": "eslint bad-test-file.ts --config index.js",
     "prettier:check": "prettier --check '**/*.{js, md}'",
     "prettier:write": "prettier --write '**/*.{js, md}'"
   },
@@ -19,9 +20,9 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "eslint": "^8.51.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
+    "eslint": "^9.35.0",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
     "eslint-plugin-no-only-tests": "^3.1.0"
   },
   "devDependencies": {

@@ -1,110 +1,122 @@
-module.exports = {
-  root: true,
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'no-only-tests'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  parserOptions: {
-    project: './**/tsconfig.json',
+const js = require('@eslint/js');
+const tseslint = require('@typescript-eslint/eslint-plugin');
+const noOnlyTests = require('eslint-plugin-no-only-tests');
+
+module.exports = [
+  {
+    ignores: ['index.js', 'node_modules/', 'dist/', '*.config.js'],
   },
-  rules: {
-    'no-console': 'error',
-    '@typescript-eslint/no-floating-promises': 'error',
-    '@typescript-eslint/naming-convention': [
-      'error',
-      {
-        selector: 'memberLike',
-        modifiers: [],
-        format: ['camelCase'],
-        leadingUnderscore: 'forbid',
+  js.configs.recommended,
+  ...tseslint.configs['flat/recommended-type-checked'],
+  {
+    languageOptions: {
+      parserOptions: {
+        project: './tsconfig.json',
       },
-      {
-        selector: 'memberLike',
-        modifiers: ['private'],
-        format: ['camelCase'],
-        leadingUnderscore: 'require',
-      },
-      {
-        selector: 'memberLike',
-        modifiers: ['protected'],
-        format: ['camelCase'],
-        leadingUnderscore: 'require',
-      },
-      {
-        selector: ['property', 'method'],
-        format: null,
-        modifiers: ['requiresQuotes'],
-      },
-      {
-        selector: 'variableLike',
-        format: ['camelCase', 'UPPER_CASE'],
-        leadingUnderscore: 'forbid',
-        trailingUnderscore: 'forbid',
-      },
-      {
-        // To allow React function components
-        selector: 'function',
-        format: ['camelCase', 'PascalCase'],
-        leadingUnderscore: 'forbid',
-        trailingUnderscore: 'forbid',
-      },
-      {
-        selector: 'typeLike',
-        format: ['PascalCase'],
-      },
-      {
-        selector: 'enumMember',
-        format: ['PascalCase'],
-      },
-      {
-        selector: 'variableLike',
-        modifiers: ['unused'],
-        format: ['camelCase'],
-        prefix: ['_'],
-      },
-    ],
-    eqeqeq: 'error',
-    'no-var': 'error',
-    'object-shorthand': 'error',
-    'prefer-arrow-callback': 'error',
-    'prefer-destructuring': [
-      'error',
-      {
-        VariableDeclarator: {
-          object: true,
+    },
+    plugins: {
+      'no-only-tests': noOnlyTests,
+    },
+    rules: {
+      'no-console': 'error',
+      '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'memberLike',
+          modifiers: [],
+          format: ['camelCase'],
+          leadingUnderscore: 'forbid',
         },
-      },
-      {
-        enforceForRenamedProperties: false,
-      },
-    ],
-    'no-only-tests/no-only-tests': 'error',
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        destructuredArrayIgnorePattern: '^_',
-      },
-    ],
-    '@typescript-eslint/explicit-member-accessibility': [
-      'error',
-      {
-        accessibility: 'no-public',
-      },
-    ],
-    'no-restricted-syntax': [
-      'error',
-      {
-        selector:
-          ':matches(PropertyDefinition, MethodDefinition)[accessibility="private"]',
-        message: 'Use #private instead',
-      },
-    ],
-    'no-else-return': 'error',
-    'require-await': 'error',
-    'no-return-await': 'error',
-    'arrow-body-style': 'error',
-    '@typescript-eslint/parameter-properties': 'error',
+        {
+          selector: 'memberLike',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'memberLike',
+          modifiers: ['protected'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: ['property', 'method'],
+          format: null,
+          modifiers: ['requiresQuotes'],
+        },
+        {
+          selector: 'variableLike',
+          format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+          leadingUnderscore: 'forbid',
+          trailingUnderscore: 'forbid',
+        },
+        {
+          // To allow React function components
+          selector: 'function',
+          format: ['camelCase', 'PascalCase'],
+          leadingUnderscore: 'forbid',
+          trailingUnderscore: 'forbid',
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'enumMember',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'variableLike',
+          modifiers: ['unused'],
+          format: ['camelCase'],
+          prefix: ['_'],
+        },
+      ],
+      eqeqeq: 'error',
+      'no-var': 'error',
+      'object-shorthand': 'error',
+      'prefer-arrow-callback': 'error',
+      'prefer-destructuring': [
+        'error',
+        {
+          VariableDeclarator: {
+            object: true,
+          },
+        },
+        {
+          enforceForRenamedProperties: false,
+        },
+      ],
+      'no-only-tests/no-only-tests': 'error',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+        },
+      ],
+      '@typescript-eslint/explicit-member-accessibility': [
+        'error',
+        {
+          accessibility: 'no-public',
+        },
+      ],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector:
+            ':matches(PropertyDefinition, MethodDefinition)[accessibility="private"]',
+          message: 'Use #private instead',
+        },
+      ],
+      'no-else-return': 'error',
+      'require-await': 'error',
+      'no-return-await': 'error',
+      'arrow-body-style': 'error',
+      '@typescript-eslint/parameter-properties': 'error',
+    },
   },
-};
+];
