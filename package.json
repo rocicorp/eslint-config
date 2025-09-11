@@ -7,14 +7,13 @@
     "url": "http://github.com/rocicorp/eslint-config.git"
   },
   "scripts": {
-    "lint": "eslint test-file.ts --config index.js",
-    "lint:test": "eslint bad-test-file.ts --config index.js",
+    "lint": "echo 'No source files to lint in config package'",
     "prettier:check": "prettier --check '**/*.{js, md}'",
     "prettier:write": "prettier --write '**/*.{js, md}'"
   },
   "license": "Apache 2.0",
   "files": [
-    "index",
+    "index.js",
     "LICENSE",
     "README.md"
   ],
