@@ -1,13 +1,14 @@
 {
   "name": "@rocicorp/eslint-config",
   "description": "Common eslint config for Rocicorp",
-  "version": "1.0.0",
+  "version": "0.8.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "http://github.com/rocicorp/eslint-config.git"
   },
   "scripts": {
-    "lint": "echo 'No source files to lint in config package'",
+    "lint": "eslint *.js",
     "prettier:check": "prettier --check '**/*.{js, md}'",
     "prettier:write": "prettier --write '**/*.{js, md}'"
   },
